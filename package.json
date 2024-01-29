@@ -1,0 +1,29 @@
+{
+  "name": "komutan-logger",
+  "version": "0.0.0",
+  "description": "Komutan-Logger also known as Commander Logger.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FARUK-YILDIRIM/Komutan-Logger.git"
+  },
+  "keywords": [
+    "logger"
+  ],
+  "author": "Ö. Faruk YILDIRIM",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FARUK-YILDIRIM/Komutan-Logger/issues"
+  },
+  "homepage": "https://github.com/FARUK-YILDIRIM/Komutan-Logger#readme",
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "prettier": "^3.2.4"
+  }
+}
