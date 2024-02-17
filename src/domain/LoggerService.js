@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const { spawn } = require("child_process");
 
-class LogService {
+class LoggerService {
     // eslint-disable-next-line no-restricted-syntax
     constructor() {
         this.defaultLogFilePath = path.join(__dirname, "../..", "records");
@@ -91,4 +91,4 @@ class LogService {
     };
 }
 
-module.exports = LogService;
+module.exports = LoggerService;

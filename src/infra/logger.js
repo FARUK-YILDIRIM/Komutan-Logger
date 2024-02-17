@@ -1,6 +1,6 @@
 const fastify = require("fastify")();
 const dotenv = require("dotenv");
-const { logRoutes } = require("./routes");
+const { logRoutes } = require("../routes");
 
 dotenv.config();
 

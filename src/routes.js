@@ -1,6 +1,5 @@
-const LogController = require("./controllers/logController");
-
-const logController = new LogController();
+const LoggerController = require("./application/LoggerController");
+const logController = new LoggerController();
 
 const logRoutes = [
     {

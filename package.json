@@ -2,10 +2,10 @@
   "name": "komutan-logger",
   "version": "0.0.0",
   "description": "Komutan-Logger also known as Commander Logger.",
-  "main": "index.js",
+  "main": "/src/infra/logger.js",
   "scripts": {
-    "start": "node /src/logger.js",
-    "start:dev": "nodemon src/logger.js",
+    "start": "node /src/infra/logger.js",
+    "start:dev": "nodemon src/infra/logger.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
