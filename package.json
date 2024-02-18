@@ -4,7 +4,7 @@
   "description": "Komutan-Logger also known as Commander Logger.",
   "main": "/src/infra/logger.js",
   "scripts": {
-    "start": "node /src/infra/logger.js",
+    "start": "node src/infra/logger.js",
     "start:dev": "nodemon src/infra/logger.js",
     "test": "npx jest"
   },
