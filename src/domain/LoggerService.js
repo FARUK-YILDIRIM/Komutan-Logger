@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const { spawn } = require("child_process");
+const HttpResponse = require("../infra/HttpResponse");
 
 class LoggerService {
     // eslint-disable-next-line no-restricted-syntax
@@ -17,15 +18,12 @@ class LoggerService {
 
             this.appendToLogFile(logFilePath, logText);
 
-            return {
-                success: true,
-                message: "Log record added successfully",
-            };
+            return new HttpResponse(
+                true,
+                "Log record added successfully",
+            ).toResponse();
         } catch (error) {
-            return {
-                success: false,
-                message: error,
-            };
+            return new HttpResponse(false, error, 500).toResponse();
         }
     };
 
