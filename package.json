@@ -1,12 +1,16 @@
 {
   "name": "komutan-logger",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Komutan-Logger also known as Commander Logger.",
   "main": "/src/infra/logger.js",
   "scripts": {
     "start": "node src/infra/logger.js",
     "start:dev": "nodemon src/infra/logger.js",
     "test": "npx jest"
+  },
+  "engines": {
+    "npm": ">=8.0.0",
+    "node": ">=18.0.0"
   },
   "repository": {
     "type": "git",

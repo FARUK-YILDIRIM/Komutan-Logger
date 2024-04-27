@@ -9,7 +9,7 @@ class LoggerController {
     addLog = (request, reply) => {
         const { name, data, level } = request.body;
         const result = this.LoggerService.addLog(name, data, level);
-        reply.code(result.success ? 201 : 500).send(result);
+        reply.send(result);
     };
 
     getLog = async (request, reply) => {

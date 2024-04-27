@@ -1,6 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 const { spawn } = require("child_process");
+const HttpResponse = require("../infra/HttpResponse");
+const Timestamp = require("../infra/Timestamp");
 
 class LoggerService {
     // eslint-disable-next-line no-restricted-syntax
@@ -10,22 +12,19 @@ class LoggerService {
 
     addLog = (name, data, level = "info") => {
         try {
-            const logFilePath = this.logFilePath(name);
-            const timestamp = new Date().toISOString();
+            const logFilePath = this.#logFilePath(name);
+            const timestamp = new Timestamp().get();
             const logEntry = { level, timestamp, name, data };
             const logText = JSON.stringify(logEntry) + "\n";
 
-            this.appendToLogFile(logFilePath, logText);
+            this.#appendToLogFile(logFilePath, logText);
 
-            return {
-                success: true,
-                message: "Log record added successfully",
-            };
+            return new HttpResponse(
+                true,
+                "Log record added successfully",
+            ).toResponse();
         } catch (error) {
-            return {
-                success: false,
-                message: error,
-            };
+            return new HttpResponse(false, error, 500).toResponse();
         }
     };
 
@@ -37,7 +36,7 @@ class LoggerService {
         raw = false,
     ) => {
         try {
-            const checkLogFilePath = this.checkLogFilePath(name);
+            const checkLogFilePath = this.#checkLogFilePath(name);
 
             return new Promise((resolve, reject) => {
                 const tail = spawn("bash", [
@@ -73,12 +72,12 @@ class LoggerService {
         }
     };
 
-    logFilePath = (name) => {
+    #logFilePath = (name) => {
         return path.join(this.defaultLogFilePath, `${name}.log`);
     };
 
-    checkLogFilePath = (name) => {
-        const logFilePath = this.logFilePath(name);
+    #checkLogFilePath = (name) => {
+        const logFilePath = this.#logFilePath(name);
         if (fs.existsSync(logFilePath)) {
             return logFilePath;
         } else {
@@ -86,7 +85,7 @@ class LoggerService {
         }
     };
 
-    appendToLogFile = (logFilePath, logText) => {
+    #appendToLogFile = (logFilePath, logText) => {
         fs.appendFileSync(logFilePath, logText);
     };
 }
