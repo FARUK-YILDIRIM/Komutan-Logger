@@ -1,6 +1,6 @@
 {
   "name": "komutan-logger",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Komutan-Logger also known as Commander Logger.",
   "main": "/src/infra/logger.js",
   "scripts": {
