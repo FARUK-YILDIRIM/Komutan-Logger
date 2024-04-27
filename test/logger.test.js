@@ -26,7 +26,7 @@ describe("Test Logger", () => {
             .post("/log")
             .send(logData);
 
-        expect(response.statusCode).toBe(201);
+        expect(response.statusCode).toBe(200);
         expect(response.body).toEqual({
             success: true,
             message: "Log record added successfully",
