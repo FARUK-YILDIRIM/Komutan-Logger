@@ -34,6 +34,7 @@ const logRoutes = [
                         enum: ["error", "warn", "info", "debug", "trace"],
                     },
                     lines: { type: "number" },
+                    second: { type: "number" },
                     raw: { type: "boolean" },
                 },
                 required: ["name"],
