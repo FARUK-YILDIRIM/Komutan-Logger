@@ -57,9 +57,5 @@ curl -X GET \
   "http://localhost:3000/log?name=SampleLog&level=info&lines=10&raw=true"
 ```
 
-### Final
-You can find your log files under the **records** folder. 🥳
-
-This application is still in development. Feel free to share any errors, requests, and suggestions. 
 
 
